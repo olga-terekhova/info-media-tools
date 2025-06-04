@@ -22,6 +22,6 @@ A Powershell script that generates an empty config CSV file for the user to fill
 A Powershell script that generates a config CSV file with metadata for all mp3 tracks in the current directory. Album metadata is pulled from the album metadata config file. The data will be edited by the user.  
 
 ### [scripts/add-metadata-audio/Apply-TracksMetadata.ps1](scripts/add-metadata-audio/Apply-TracksMetadata.ps1)
-A Powershell that applies track metadata from the config file to the mp3 files in the directory. Work in progress - a tag editing library should be added.  
+A Powershell that applies track metadata from the config file to the mp3 files in the directory. 
 
 
