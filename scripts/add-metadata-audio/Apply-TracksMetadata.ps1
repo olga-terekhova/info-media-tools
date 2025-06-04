@@ -51,11 +51,11 @@ for ($i = 0; $i -lt $trackMetadataList.Count; $i++) {
     $metaArgs = @()
     foreach ($key in $metadata.PSObject.Properties.Name) {
         if ($ffmpegMap.ContainsKey($key) -and $ffmpegMap[$key]) {
+            $ffmpegKey = $ffmpegMap[$key]
             $value = $metadata.$key
             if ($value) {
-		$ffmpegKey = $ffmpegMap[$key]
                 $metaArgs += "-metadata"
-                $metaArgs += "$ffmpegKey=$value"
+                $metaArgs += "$ffmpegKey=`"$value`""
             }
         }
     }
@@ -69,12 +69,13 @@ for ($i = 0; $i -lt $trackMetadataList.Count; $i++) {
         "-i", "`"$($file.FullName)`"",
         "-i", "`"$coverFile`"",
         "-map", "0", "-map", "1",
-	"-c:a", "copy",
+        "-c", "copy",
         "-id3v2_version", "3",
-        "-metadata:s:v", "title=Album cover",
-        "-metadata:s:v", "comment=Cover (front)"
-    ) + $metaArgs + "`"$outputFile`""
+        "-metadata:s:v", "title=`"Album cover`"",
+        "-metadata:s:v", "comment=`"Cover (front)`""
+    ) + $metaArgs + "`"$tempOutput`""
 
+    Write-Host $ffmpegArgs
     & ffmpeg @ffmpegArgs | Out-Null
 
     # Replace original file with updated one
