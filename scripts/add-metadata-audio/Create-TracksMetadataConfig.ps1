@@ -24,8 +24,8 @@ $folder = $shell.Namespace((Get-Location).Path)
 $folderItems = Get-ChildItem -Filter *.mp3 | Sort-Object Name | ForEach-Object { $folder.ParseName($_) }
 
 # Property indices (some vary by system):
-# 0 Name, 14 Album, 15 Year, 16 Genre, 21 Title, 24 Comments, 26 Track #, 27 Length, 13 Contributing artists, 237 Album artist
-$properties = 0,14,15,16,21,24,26,27,13,237
+# 0 Name, 14 Album, 15 Year, 16 Genre, 21 Title, 26 Track #, 27 Length, 13 Contributing artists, 237 Album artist
+$properties = 0,14,15,16,21,26,27,13,237
 $i = 1
 
 # Collect metadata for each file
