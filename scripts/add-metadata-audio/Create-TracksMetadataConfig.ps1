@@ -40,6 +40,7 @@ $allMetadata = foreach ($item in $folderItems) {
     # Add/override with album-wide metadata
     $fileMetadata["Album"]        = $album
     $fileMetadata["Album artist"] = $album_artist
+    $fileMetadata["Contributing artists"] = $album_artist
     $fileMetadata["Year"]         = $year
     $fileMetadata["Genre"]        = $genre
     $fileMetadata["#"]        = $i
