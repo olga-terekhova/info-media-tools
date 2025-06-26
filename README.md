@@ -25,6 +25,11 @@ A Powershell script that generates an empty config CSV file for the user to fill
 A Powershell script that generates a config CSV file with metadata for all mp3 tracks in the current directory. Album metadata is pulled from the album metadata config file. The data will be edited by the user.  
 
 ### [scripts/add-metadata-audio/Apply-TracksMetadata.ps1](scripts/add-metadata-audio/Apply-TracksMetadata.ps1)
-A Powershell that applies track metadata from the config file to the mp3 files in the directory. 
+A Powershell script that applies track metadata from the config file to the mp3 files in the directory. 
 
+## Organize images
+### [scripts/organize-images/Create-Markdown-Images.ps1](scripts/organize-images/Create-Markdown-Images.ps1)
+A Powershell script that creates a Markdown file listing emded code for all images in the current directory.  
 
+### [scripts/organize-images/Rename-Images-Increment.ps1](scripts/organize-images/Rename-Images-Increment.ps1)
+A Powershell script that renames all images in the current directory into sequential integers (like 1.png, 2.png), zero-padded if needed.  
