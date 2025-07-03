@@ -2,6 +2,10 @@
 
 An assortment of tools that help transform information between video, audio, and text form.  
 
+## Get video
+### [scripts/get-video/Get-TS.ps1](scripts/get-video/Get-TS.ps1)
+A Powershell script that extracts TS files from a playlist and merges them into a single TS file.  
+
 ## Extract audio
 ### [scripts/extract-audio/Extract-MP3-From-TS.ps1](scripts/extract-audio/Extract-MP3-From-TS.ps1)
 A Powershell script that extracts audio as mp3 files from all video files (ts) in the current directory using ffmpeg.  
