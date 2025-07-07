@@ -1,8 +1,8 @@
 # Get current directory name
 $CurrentDir = Get-Item -Path "." | Select-Object -ExpandProperty Name
 
-# Get all PNG files in current directory, sorted alphabetically
-$PngFiles = Get-ChildItem -Filter *.png | Sort-Object Name
+# Get all PNG or JPG files in current directory, sorted alphabetically
+$ImgFiles = Get-ChildItem | Where-Object { $_.Extension -ieq ".png" -or $_.Extension -ieq ".jpg" }  | Sort-Object Name
 
 # Output file path
 $MarkdownFile = "images.md"
@@ -14,7 +14,7 @@ $LinesChildDir += "Markdown code to embed images stored in the child directory (
 $LinesCurrDir = @()
 $LinesCurrDir += "Markdown code to embed images stored in the current directory  "
 
-foreach ($File in $PngFiles) {
+foreach ($File in $ImgFiles) {
     $LineChildDir = "![{0}](./{1}/{2}) {0}" -f $File.BaseName, $CurrentDir, $File.Name
     $LinesChildDir += $LineChildDir
     $LineCurrDir = "![{0}]({2}) {0}" -f $File.BaseName, $CurrentDir, $File.Name
